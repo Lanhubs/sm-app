@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/stylesheets/user-form.css">
+<div class="container">
+    {{>header}}
+    <div class="main-body">
+        <div class="login-form-parent">
+            <ul class="user-form">
+                <li>
+                    <h2 class="form-header">
+                        Register
+                    </h2>
+                </li>
+                <form method="post" id="form">
+                    <li class="input-label">
+                        Full name
+                    </li>
+                    <li>
+                        <input type="text" name="fullName" id="fullName" class="input-elem">
+                    </li>
+                    <div class="fullName error"></div>
+                    <li class="input-label">
+                        Email
+                    </li>
+                    <li>
+                        <input type="email" name="email" id="email" class="input-elem">
+                    </li>
+                    <div class="email error"></div>
+                    <li class="input-label">
+                        Password
+                    </li>
+                    <li>
+                        <input type="password" name="password" id="password" class="input-elem">
+                    </li>
+                    <div class="password error"></div>
+
+                    {{!-- <li class="input-label">
+                        confirm password
+                    </li>
+                    <li>
+                        <input type="password" name="repassword" id="repassword" class="input-elem">
+                    </li>
+                    <div class="repassword error"></div> --}}
+
+                    <li>
+                        <button type="submit" class="btn btn-primary" id="submitBtn"> Create Account </button>
+                    </li>
+                    <li>
+                        Already have an account?
+                    </li>
+                    <li>
+                        <a href="/login" class="btn btn-secondary" id="submitBtn"> Register </a>
+                    </li>
+                </form>
+            </ul>
+        </div>
+    </div>
+
+    {{>footer}}
+</div>
+
+{{>sideNav}}
+
+
+<script src="/javascripts/signUpHandler.js"></script>

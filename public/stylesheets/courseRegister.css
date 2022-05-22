@@ -1,0 +1,123 @@
+/* stylesheet fof registration form for the courses */
+.container{
+    height: 100%;
+}
+
+.container .regForm-container{
+    width: 35em;
+    margin: auto;
+    margin-top: 5em;
+    height: 45em;
+    display: block;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 3px solid #f5f0f0;
+    box-shadow: 15px 15px 40px #f5f0f0, -15px -15px 40px #ebe8e8;
+    background: #fff;
+    
+}
+.container .heading{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.container .regForm-container .form-header{
+    width: 100%;
+    height: 20em;
+    
+    background-color: rgb(250, 246, 246);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode:hue;
+    clear: both;
+    text-align: center;
+    
+
+}
+.regForm-container .form-header .course-img{
+    height: inherit;
+    width: 100%;
+    padding-top: 30%;
+}
+.regForm-container .form-header .course-img img{
+    width: inherit;
+    height: 100%;
+
+}
+
+.regForm-container .form{
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    
+}
+.regForm-container .form .inputBox{
+    overflow: hidden;
+    width: 80%;
+    
+    overflow: hidden;
+    display: flex;
+    display: flexbox;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    border: 2px solid #006eff;
+    border-radius: 5px 10px;
+}
+.regForm-container .form p{
+    margin: 10px 20px;
+    
+}
+.regForm-container .form .inputBox {
+    overflow: hidden;
+    height: 40px;
+}
+.regForm-container .form .inputBox input{
+    width: 100%;
+    height: inherit;
+    font-size: 15px;
+    border: none;
+    padding-left: 15px;
+}
+.regForm-container .form .inputBox select{
+    width: 100%;
+    height: inherit;
+    font-size: 15px;
+    border: none;
+    padding-left: 15px;
+}
+.regForm-container .form .inputBox:last-of-type{
+    border: none;
+}
+.regForm-container .form .inputBox select option{
+    width: 100%;
+    height: inherit;
+    font-size: 15px;
+    border: none;
+    padding-left: 15px;
+}
+.regForm-container .form .inputBox button{
+    font-size: 15px;
+    display: flex;
+    display: flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    background: #006eff;
+    border-radius: 10px;
+    width: 7em;
+    margin: 10px;
+    margin-left: auto;
+    color: #fff;
+}
+@media (max-width: 700px) {
+    .regForm-container{
+        max-width: 80%;
+        /* margin: 10px auto; */
+    }
+}

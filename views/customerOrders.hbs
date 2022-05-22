@@ -1,0 +1,101 @@
+<link rel="stylesheet" href='/stylesheets/products.css' />
+
+<div class="container">
+
+
+    {{>header}}
+    <div class="main-body">
+        <div class="order-details">
+            <div class="customer-details">
+                <ul>
+                    <li>
+                        <div class="icon-parent">
+                            <i class="fas fa-user icon"></i>
+                        </div> <b>C N: </b> <span>  {{fullName}}</span> 
+                    </li>
+
+
+                    <li>
+                        <div class="icon-parent">
+                            <i class="far fa-location icon"></i>
+                        </div>
+                        <b>delivery address:  </b> <span>  {{customerDetails.address}}</span> 
+                    </li>
+                    <li>
+                        <div class="icon-parent">
+                            <i class="far fa-envelope icon"></i>
+                        </div>
+                        <b> Email:</b>  {{email}}
+                    </li>
+                    <li>
+                        <div class="icon-parent">
+                            <i class="fa fa-phone icon"></i>
+                        </div>
+                        <b>phone No: </b> <span>  {{customerDetails.phoneNo}}</span>  
+                    </li>
+                    <li>
+                        <div class="icon-parent">
+                            <i class="fa fa-calendar-alt icon"></i>
+                        </div><b> delivery date:</b> <span>  {{customerDetails.deliveryDate}}</span> 
+
+                    </li>
+                    <li>
+                        <div class="icon-parent">
+                            <i class="far fa-receipt icon"></i>
+                        </div>
+                        <b>order id:</b> <span>   {{customerDetails.orderDate}}</span> 
+
+                    </li>
+                </ul>
+            </div>
+            <div class="order-fees">
+                
+                    <div class="child"><b>Total:</b></div>
+                    <h3 class="child">&#8358;<span></span></h3>
+                
+            </div>
+            <h3>Your Orders</h3>
+            <div class="orders">
+                <ul>
+
+
+
+                    {{#each items}}
+                    <li>
+                        <div class="product-details">
+                            <a class="product-image-parent">
+                                <img src="{{image}}" class="product-image" alt="order image" />
+                            </a>
+
+                            <div class="brief-details">
+                                <h3>{{itemName}}</h3>
+
+                            </div>
+                            <h3 class="price">&#8358;<span>{{price}}</span></h3>
+
+                        </div>
+                    </li>
+                    {{/each}}
+
+                    {{!-- <div class="empty-orders">
+                        <h2 class="empty-orders-text"></h2>
+                    </div> --}}
+
+
+
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+</script>
+
+<script src="/javascripts/customerOrders.js">
+    
+</script>

@@ -1,0 +1,90 @@
+.main-body .login-form-parent{
+    width: 100%;
+    margin: 0;
+    height: 100%;
+
+}
+
+.main-body .login-form-parent .user-form{
+    max-width: 26em;
+    margin: 30px auto;
+    padding-left: 0;
+    padding: 20px;
+    border-radius: 10px;
+    list-style: none;
+    background: #fff;
+    border: 1.5px solid rgba(143, 104, 104, 0.2);
+    box-shadow: 0px 0px 4px rgba(143, 104, 104, 0.2), 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-body .login-form-parent .user-form li{
+    width: 100%;
+    margin-top: 10px;
+}
+.main-body .login-form-parent .user-form li .form-header{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(43, 43, 43);
+
+}
+.main-body .login-form-parent .user-form li .input-label{
+    font-size: 15px;
+}
+.main-body .login-form-parent .user-form li input{
+    width: 100%;
+    padding: 10px;
+}
+
+.main-body .login-form-parent .user-form li .input-elem{
+    border-radius: 9px;
+    outline:  none;
+    border: 1.5px solid  rgba(143, 104, 104, 0.2);
+}
+.main-body .login-form-parent .user-form li .input-elem:focus{
+    border-radius: 9px;
+    border: 2px solid  rgba(143, 104, 104, 0.2);
+}
+
+.main-body .login-form-parent .user-form li .btn{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: ivory;
+    letter-spacing: 1px;
+    padding: 10px;
+    outline: none;
+    /* border: 2px solid rgb(92, 91, 91); */
+    border: none;
+    text-decoration: none;
+}
+.main-body .login-form-parent .user-form li .btn:hover{
+    background: #fff;
+    border: 1.5px solid rgb(93, 165, 248);
+    color: rgb(93, 165, 248);
+}
+.main-body .login-form-parent .user-form li .btn-primary{
+    background: rgb(93, 165, 248);
+}
+.main-body .login-form-parent .user-form li .btn-secondary{
+    background: rgb(85, 125, 243);
+    display: flex;
+    justify-content: center;
+    width: inherit;
+}
+.main-body .login-form-parent .user-form .error{
+    color: rgb(245, 40, 40);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.main-body .login-form-parent .user-form li .btn-secondary:hover{
+    background: #fff;
+    border: 1.5px solid rgb(85, 125, 243);
+    color: rgb(85, 125, 243);
+}
+@media only screen and (max-width: 768px){
+    .main-body .login-form-parent .user-form{
+        margin: 50px 30px 90px 30px;
+    }
+}

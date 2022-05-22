@@ -1,0 +1,28 @@
+<div class="container">
+    {{>header}}
+
+    <div class="main-body">
+        <div class="form-container">
+            <h1 class="form-header">Newsletter</h1>
+            <form method="post" id="newsletterForm">
+                <div class="inputbox">
+                    <input type="text" id="fullName" name="fullName" class="form-control" required="required">
+                    <span>Full
+                        name</span>
+                </div>
+                <div class="inputbox">
+                    <input type="email" id="email" name="email" class="form-control" required="required">
+                    <span>Email</span>
+                </div>
+                {{!-- <div class="inputbox">
+                    <input type="text" id="phone" name="phone" class="form-control" required="required">
+                    <span>Phone No</span>
+                </div> --}}
+                <button type="submit" class="submitBtn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+    {{>footer}}
+</div>
+{{>sideNav}}
+<script src="/javascripts/newsletter.js"></script>

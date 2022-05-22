@@ -1,0 +1,42 @@
+<div class="main-container">
+    {{>adminHeader}}
+    <section class="admin-body">
+    <div class="admin-detail">
+            <img src="/images/background.jpg" alt="admin-img">
+            <div class="name">
+                <h3 class="admin-name">{{admin}}</h3>
+            </div>
+        </div>
+        <div class="orders-details">
+            <h1 class="orders-heading">Students</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    {{!-- <th>Id</th> --}}
+                    <th>Students names</th>
+                    <th>course name</th>
+                    <th>gender</th>
+                    <th>email</th>
+                    <th>phone no</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {{#each students}}
+                <tr>
+                    {{!-- <td scope="row">{{this._id}}</td> --}}
+                    <td>{{this.fullName}}</td>
+                    <td>{{this.courseName}}</td>
+                    <td>{{this.gender}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.phoneNo}}</td>
+                    
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        </div>
+        
+
+    </section>
+</div>

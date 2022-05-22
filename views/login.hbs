@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/stylesheets/user-form.css">
+<div class="container">
+    {{>header}}
+    <div class="main-body">
+        <div class="login-form-parent">
+            <ul class="user-form">
+                <li>
+                    <h2 class="form-header">
+                        Sign in
+                    </h2>
+                </li>
+                <form id="form" method="post">
+                    <li class="input-label">
+                        Email
+                    </li>
+                    <li>
+                        <input type="email" name="email" id="email" class="input-elem">
+                    </li>
+                    <div class="email error"></div>
+                    <li class="input-label">
+                        Password
+                    </li>
+                    <li>
+                        <input type="password" name="password" id="password" class="input-elem">
+                    </li>
+                    <div class="password error"></div>
+                    <li>
+                        <button class="btn btn-primary" type="submit" id="submitBtn"> Sign in </button>
+                    </li>
+                    <li>
+                        Don't have an account?
+                    </li>
+                    <li>
+                        <a href="/register" class="btn btn-secondary" id="submitBtn">Create Account </a>
+                    </li>
+                </form>
+            </ul>
+        </div>
+    </div>
+
+    {{>footer}}
+</div>
+
+{{>sideNav}}
+
+
+<script src="/javascripts/signinHandler.js"></script>

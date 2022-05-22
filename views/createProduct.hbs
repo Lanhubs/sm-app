@@ -1,0 +1,117 @@
+<style>
+    .error {
+        color: rgb(248, 71, 71);
+        font-weight: 600;
+    }
+</style>
+
+
+<div class="main-container">
+    {{>adminHeader}}
+    <div class="admin-body">
+        <div class="admin-detail">
+            <img src="/images/background.jpg" alt="admin-img">
+            <div class="name">
+                <h3 class="admin-name">{{admin}}</h3>
+            </div>
+        </div>
+        {{#if product}}
+        <div class="createProduct-form">
+            <h1>Edit Product</h1>
+            <form enctype="multipart/form-data" id="updateProduct">
+                <div class="inputParent">
+                    <label for="productName">Product Name</label><br>
+                    <input type="text" name="name" required value="{{product.name}}" id="name" />
+                </div>
+               
+                <div class="error nameError"></div>
+                
+                <div class="inputParent">
+                    <label for="productImg">Product image</label><br>
+                    <input type="file" name="image" value="{{product.image}}" required id="image" />
+                </div>
+                
+                <div class="error imageError"></div>
+            
+                <div class="inputParent">
+                    <label for="description">Product Description</label><br>
+                    <input type="text" name="description" value="{{product.description}}" required id="description" />
+                </div>
+                <div class="error descError"></div>
+                <div class="inputParent">
+                    <label for="price">Product price</label><br>
+                    <input type="text" name="price" value="{{product.price}}" required id="price" />
+                </div>
+                <div class="error priceError"></div>
+                <div class="inputParent">
+                    <label for="type">Product type</label><br>
+                    <select name="type" id="type">
+                        <option value="food">Food</option>
+
+                        <option value="acccessories">Accessories</option>
+                    </select>
+                </div>
+                <div class="error typeError"></div>
+                <button type="submit" id="updateProduct">update product</button>
+
+            </form>
+        </div>
+        {{else}}
+        <div class="createProduct-form">
+            <h1>crete Product</h1>
+            <form method="POST" enctype="multipart/form-data" id="createProduct_form">
+                <div class="inputParent">
+                    <label for="productName">Product Name</label><br>
+                    <input type="text" name="name" id="name" />
+                </div>
+
+                
+                <div class="error nameError"> </div>
+                
+                <div class="inputParent">
+                    <label for="productImg">Product image</label><br>
+                    <input type="file" name="image"  id="image" />
+                </div>
+                
+                <div class="error imageError"> </div>
+                
+                <div class="inputParent">
+                    <label for="description">Product Description</label><br>
+                    <input type="text" name="description"  id="description" />
+                </div>
+               
+                <div class="error descError"> </div>
+                
+                <div class="inputParent">
+                    <label for="price">Product price</label><br>
+                    <input type="text" name="price"  id="price" />
+                </div>
+
+               
+                <div class="error priceError"></div>
+                
+                <div class="inputParent">
+                    <label for="type">Product type</label><br>
+                    <select name="type" id="type">
+                        <option value="food">Food</option>
+                        <option value="acccessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="error typeError"></div>
+                
+                <button type="submit">Create product</button>
+
+            </form>
+        </div>
+        {{/if}}
+
+    </div>
+</div>
+
+{{!-- updateProduct --}}
+<script>
+    
+</script>
+{{!-- create product script --}}
+<script src="/javascripts/admin/createProduct.js"></script>

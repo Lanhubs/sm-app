@@ -1,0 +1,81 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.orderForm-parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+}
+
+.orderForm-container {
+    width: 40em;
+    height: 600px;
+    background: #fff;
+    box-shadow: 0 10px 15px rgba(56, 56, 56, 0.4);
+}
+
+.orderForm-container h1 {
+    text-align: center;
+}
+
+.orderForm-container .form-header {
+    display: block;
+    text-align: center;
+}
+
+.inputBox {
+    width: 80%;
+    height: 30px;
+    border: 2px solid #006eff;
+    border-radius: 10px;
+    margin: 20px auto;
+    /* box-sizing: content-box; */
+    overflow: hidden;
+    height: 3em;
+}
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    outline: none;    
+}
+.payBtn-parent{
+    display: flex;
+    display: flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: right;
+    align-items: right;
+    width: 80%;
+    margin: auto;
+}
+
+.payBtn-parent .payBtn{
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    outline: 2px solid #f2f2f2;
+    background: #006eff;
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    .orderForm-container {
+        width: 90%;
+        height: 600px;
+    }
+}

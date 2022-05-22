@@ -1,0 +1,39 @@
+<header class="header">
+    <h2>ZeroToOne</h2>
+    <nav class="navBar">
+        <ul class="nav-container">
+
+            <li class="nav-item"><a href="/" class="nav-link"> <i class="fa fa-home"></i>{{!-- Home --}}</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link"> <i class="fas fa-info-circle "
+                        style="rotate: 45deg;"></i> {{!-- About --}}</a></li>
+
+            {{#if user}}
+            <li class="nav-item"><a href="/products/{{this._id}}" class="nav-link"><i class="fas fa-inventory"></i> {{!--
+                    Products --}}</a></li>
+            {{else}}
+            <li class="nav-item"><a href="/products" class="nav-link"><i class="fas fa-inventory"></i> {{!-- Products
+                    --}}</a></li>
+            {{/if}}
+
+
+            <li class="nav-item"><a href="/contactus" class="nav-link"><i class="fas fa-address-book "
+                        style="rotate: 45deg;"></i> {{!-- Contact --}}</a></li>
+            <li class="nav-item"><a href="/services" class="nav-link"> <i class="fa fa-wifi" style="rotate: 49deg;"></i>
+                    {{!-- Services --}}</a></li>
+
+                    {{#if user}}
+                    <li class="nav-item"><a href="/login" class="nav-link"> <i class="fa fa-sign-out" style="rotate: 49deg;"></i>
+            sign out</a></li>
+                    {{else}}
+                        <li class="nav-item"><a href="/login" class="nav-link"> <i class="fa fa-sign-in" style="rotate: 49deg;"></i>
+            sign in</a></li>
+                    {{/if}}
+            
+            
+
+
+        </ul>
+    </nav>
+    <a id="displaySideNav" onclick="openSideBar()" class="displaySideNavBtn"><i class="fa fa-bars"></i></a>
+
+</header>

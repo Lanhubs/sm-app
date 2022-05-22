@@ -1,0 +1,33 @@
+
+<link rel="stylesheet" href="/stylesheets/oderPage.css">
+
+<div class="orderForm-parent">
+
+    <div class="orderForm-container">
+        <h1>Me-Tech</h1>
+        <div class="form-header">
+            <h1>Your description</h1>
+        </div>
+        <form>
+            <div class="inputBox" style="display: none;">
+                <input type="text" name="customerName" id="customerName" class="customerName"
+                    placeholder="customer name:" hidden="true" value="{{user}}"/>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="Address" id="address" class="address" placeholder="address:" />
+            </div>
+            <div class="inputBox">
+                <input type="text" name="phoneNo" id="phoneNo" class="phoneNo" placeholder="phone number:" />
+            </div>
+            <div class="inputBox">
+                <input type="email" name="email" id="email" class="email" placeholder="email:" />
+            </div>
+            <div class="payBtn-parent">
+                <button type="button" class="payBtn">Order Now</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script type="module" src="/javascripts/checkout.js"></script>

@@ -1,0 +1,40 @@
+<div class="container">
+    {{>header}}
+
+    <div class="main-body">
+        <div class="form-container">
+            <h1 class="form-header">Your Message</h1>
+            <form id="contactusForm">
+                <div class="inputbox">
+                    <input type="text" id="fullName" name="fullName" class="form-control" required="required">
+                    <span>Full
+                        name</span>
+                </div>
+                <div class="inputbox">
+                    <input type="email" id="email" name="email" class="form-control" required="required">
+                    <span>Email</span>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="subject" name="subject" class="form-control" required="required">
+                    <span>subject</span>
+                </div>
+                <div class="inputboxtextArea ">
+                    <!-- <label for="Message">Message</label><br> -->
+                    <textarea name="Message" id="messageBox" class="inputTextArea" cols="30" rows="3"
+                        placeholder="Message....." required></textarea>
+                    <span></span>
+                </div>
+                <button type="submit" class="submitBtn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+    {{>footer}}
+</div>
+<div class="email-error">
+    <div>
+        
+    </div>
+</div>
+{{>sideNav}}
+{{>contactusMessage}}
+<script src="/javascripts/contactusHandler.js"></script>

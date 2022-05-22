@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/stylesheets/adminForm.css">
+
+
+<div class="container">
+    <div class="main-body">
+        <div class="login-form-parent center-me">
+            <ul class="user-form">
+                <li>
+                    <h1 class="form-header">
+                        Me-Tech
+                    </h1>
+                    <h2 class="form-header">
+                        Admin Login
+                    </h2>
+                    
+                </li>
+                <form id="form" method="post">
+                    <li class="input-label">
+                        Email
+                    </li>
+                    <li>
+                        <input type="email" name="email" id="email" class="input-elem">
+                    </li>
+                    <div class="email error"></div>
+                    <li class="input-label">
+                        Password
+                    </li>
+                    <li>
+                        <input type="password" name="password" id="password" class="input-elem">
+                    </li>
+                    <div class="password error"></div>
+                    <li>
+                        <button class="btn btn-primary" type="submit" id="submitBtn"> Sign in </button>
+                    </li>
+
+                </form>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script src="/javascripts/admin/adminLoginHandler.js"

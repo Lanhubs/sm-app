@@ -1,0 +1,67 @@
+
+
+<div class="container">
+     {{>header}}
+     <div class="main-body">
+         <h1 class="products-header">Services</h1>
+         <div class="products">
+             <div class="product-list-header-container">
+                 <h1 class="product-list-header">The Kitchen</h1>
+             </div>
+            
+            
+            <ul class="products-container">
+                {{#each kitchen}}
+
+                <li class="product-item servicesItem">
+                    <img src="{{image}}" alt="product-image" />
+                    <div class="product-body">
+                        <h2 class="product-name">{{service}}</h2>
+                        <h3 class="product-description">{{description}}</h3>
+                        <h4> {{openingtime}}</h4>
+                        <h4>{{closing}}</h4>
+
+                    </div>
+
+                </li>
+
+
+
+
+
+                {{/each}}
+            </ul>
+            <h1 class="product-list-header">The Computing courses</h1>
+            
+            <p class="service-description">They are all physical classes for easier and practical demonstration of what you will be taught</p>
+            
+            <ul class="products-container">
+                {{#each computerClasses}}
+
+                <li class="product-item servicesItem">
+                    <img src="{{image}}" alt="product-image" />
+                    <div class="product-body">
+                        <h2 class="product-name">{{service}}</h2>
+                        <h3 class="product-description">{{description}}</h3>
+                        <h4 class="price"> &#8358; <span class=" fee">{{fee}}</span></h4>
+                        <h4></h4>
+                        <a href="/services/{{service}}/courseregister" class="apply-link">Apply Now</a>
+                        
+                    </div>
+
+                </li>
+
+
+
+
+
+                {{/each}}
+            </ul>
+        </div>
+     </div>
+     {{>footer}}
+</div>
+{{>sideNav}}
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<script type="module" src="/javascripts/servicepay.js"></script>

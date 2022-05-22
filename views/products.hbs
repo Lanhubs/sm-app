@@ -1,0 +1,108 @@
+<div class="container">
+    {{>header}}
+
+    <div class="main-body">
+        {{>customersNavBar}}
+        <div class="cartItemsAmount-container">
+            <a href="/cart" class="cartAmounts">Cart <i class="far fa-shopping-cart"></i> <span
+                    class="cartAmount"></span></a>
+        </div>
+
+
+        <div class="card-flex-parent">
+            <h3 class="products-header">Products {{user}}</h2>
+                <ul class="card-flex">
+                    {{#each Foods}}
+                    <li class="product-card">
+
+                        <div class="card">
+                            <div class="slide slide1">
+                                <div class="content">
+                                    <div class="icon">
+                                        <img src="{{image}}" alt="product image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide slide2">
+                                <div class="content">
+                                    <h3 class="product-name">
+                                        {{name}}
+                                    </h3>
+                                    <h3 class="product-price" id="productPrice">&#8358;<span class="Price">
+                                            {{price}}
+                                        </span> </h3>
+                                    <p class="product-description">{{description}}</p>
+
+                                    {{!-- {{#if user}} --}}
+                                    <div class="controls">
+                                        <button class="addToCart">Add to cart</button>
+                                        <a href="#">&hearts;</a>
+                                    </div>
+                                    <div class="controls">
+                                        <a href="/{{name}}/details" class="view-details">view details</a>
+                                    </div>
+                                   {{!--  {{else}}
+                                    <div class="controls">
+                                        <a href="/{{name}}/details" class="view-details">view details</a>
+                                    </div>
+                                    {{/if}} --}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    {{/each}}
+                </ul>
+        </div>
+
+        <div class="card-flex-parent">
+            <h3 class="products-header">Computer gadgets</h2>
+                <ul class="card-flex">
+                    {{#each electronics}}
+                    <li class="product-card">
+
+                        <div class="card">
+                            <div class="slide slide1">
+                                <div class="content">
+                                    <div class="icon">
+                                        <img src="{{image}}" alt="product image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide slide2">
+                                <div class="content">
+                                    <h3>
+                                        {{name}}
+                                    </h3>
+                                    <h3 class="product-price" id="productPrice">&#8358;<span class="Price">
+                                            {{price}}
+                                        </span> </h3>
+                                    <p>{{description}}</p>
+                                    {{!-- {{#if user}} --}}
+                                    <div class="controls">
+                                        <button class="addToCart">Add to cart</button>
+                                        <a href="#">&hearts;</a>
+                                    </div>
+                                    <div class="controls">
+                                        <a href="/{{name}}/details" class="view-details">view details</a>
+                                    </div>
+                                    {{!-- {{else}}
+                                    <div class="controls">
+                                        <a href="/{{name}}/details" class="view-details">view details</a>
+                                    </div>
+                                    {{/if}} --}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    {{/each}}
+                </ul>
+        </div>
+        {{>footer}}
+
+    </div>
+
+    {{>sideNav}}
+
+    <script src="/javascripts/productHandlers.js"></script>

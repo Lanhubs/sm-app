@@ -1,0 +1,80 @@
+<div class="main-container">
+    {{>adminHeader}}
+    <section class="admin-body">
+        <div class="admin-detail">
+            <img src="/images/background.jpg" alt="admin-img">
+            <div class="name">
+                <h3 class="admin-name">{{admin}}</h3>
+            </div>
+        </div>
+        
+        <div class="orders-details">
+            <h1 class="orders-heading">Orders</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        {{!-- <th>Id</th> --}}
+                        <th>customers names</th>
+                        <th>orders</th>
+                        <th>prices</th>
+                        <th>quantity</th>
+                        <th>Date</th>
+                        <th>address</th>
+                        <th>contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if contents}}
+                    {{#each contents}}
+                    
+                    <tr >
+                        {{!-- <td scope="row">{{this._id}}</td> --}}
+                        <td>{{this.customerName}}</td>
+                        <td>{{this.itemName}}</td>
+                        <td>N{{this.price}}</td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{this.orderDate}}</td>
+                        <td>{{this.address}}</td>
+                        <td>{{this.phoneNo}}</td>
+                    </tr>
+                    
+                    {{/each}}
+                    {{else}}
+                    <div class="empty-orders">
+                        <h1>There no any orders for now</h1>
+                        <p>
+                            <i class="fa fa-shopping-cart"></i>
+                        </p>
+                        
+                    </div>
+                    {{/if}}
+                </tbody>
+            </table>
+            <div class="del-parent">
+                <button >clear orders</button>
+            </div>
+        </div>
+    </section>
+</div>
+{{!-- <script src="/javascripts/admin/adminHome.js"></script> --}}
+<script>
+    // truncate text if length persist certain amount 
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".table tbody tr td").forEach(elems => {
+        truncate(elems.textContent, 10)
+        console.log(truncate(elems.textContent, 10))
+    })
+})
+const truncate = (str, maxLength, { side = "end", elipsis = "..." } = {}) => {
+    if (str.textContent.length > maxLength) {
+        switch (side) {
+            case "start":
+                return elipsis + str.slice(-(maxLength - elipsis.length))
+            case "end":
+            default:
+                return str.slice(0, maxLength - elipsis.length) + elipsis
+        }
+    }
+}
+</script>
+{{!-- <script src="/javascripts/admin/adminHandler.js"></script> --}}

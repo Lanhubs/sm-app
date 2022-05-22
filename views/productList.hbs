@@ -1,0 +1,49 @@
+<div class="main-container">
+    {{>adminHeader}}
+    <div class="admin-body">
+
+
+        <div class="admin-detail">
+            <img src="/images/background.jpg" alt="admin-img">
+            <div class="name">
+                <h3 class="admin-name">{{admin}}</h3>
+            </div>
+        </div>
+
+        <div class="orders-details">
+            <h1 class="orders-heading">Product lists</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>product names</th>
+                        <th>prices</th>
+                        <th>description</th>
+                        <th>type</th>
+                        <th>operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productDetails}}
+                    <tr>
+                        <td scope="row">{{_id}}</td>
+                        <td name="name">{{name}} </td>
+                        <td name="price">&#8358;{{price}}</td>
+                        <td name="description">{{description}}</td>
+                        <td name="type">{{type}}</td>
+                        <td id="operations">
+                            <a href="/admin/{{_id}}/update" type="" id="edit"><i class="fa fa-pen"></i></a>
+                            <button id="delete"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    {{/each}}
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="/javascripts/admin/createProduct.js"
