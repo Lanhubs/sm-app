@@ -4,7 +4,7 @@ require('dotenv').config()
 const mongoURI = process.env.DB_CONNECTION_URI
 
 
-mongoose.connect(process.env.DB_CONNECTION_URI)
+mongoose.connect(process.env. ONLINE_URI)
     .then(() => {
         console.log("database connected")
     })

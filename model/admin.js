@@ -1,7 +1,7 @@
 const { mongoose } = require("mongoose")
 const schema = require("./db/dbConnection")
 const bcrypt = require("bcrypt")
-// const uniqueValidator = require("mongoose-unique-validator")
+
 const Admin = new schema({
     fullName: {
         type: String,
