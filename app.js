@@ -46,7 +46,7 @@ app.use( route)
 app.use(adminRoute)
 app.use(userLoginReg)
 
-app.listen(3030 || process.env.PORT, () => {
+app.listen( process.env.PORT|| 3030, () => {
     console.log("app listening at port 3030")
 })
 

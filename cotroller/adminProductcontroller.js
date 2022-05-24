@@ -47,39 +47,36 @@ const createProduct = async (req, res) => {
 // update product
 const updateProduct = (req, res) => {
     const productId = req.params.id
-    
+    const  product = req.body
     const image = req.files.image
+
     try {
-        productDetails.findOneAndUpdate({ _id: productId }, { $set: { 
-            name: req.body.name, 
-            price: req.body.price, 
-            description: req.body.description, 
-            type: req.body.type
-            , image: image.name } },
-            { new: true }, (err, data) => {
-                console.log(data)
-                if (err) {
-                    res.status(405).json({ error: err })
-                } else {
-                    if (data.image) {
-                        image.mv(__dirname + "/uploads/" + image.name, (err) => {
-                            if (err) {
-                                res.status(405).json({ error: err })
-                            }
-                        })
-                    } else {
-                        res.json({ product: data._id })
-                    }
-                }
-    
-    
-    
-    
-            })
+         productDetails.findOneAndUpdate({ _id: productId }, { $set: { 
+             name: product.name, 
+             price: product.price, 
+             description: product.description, 
+             type: product.type
+             , image: image.name } },
+             { new: true }, (err, data) => {
+                 console.log(data)
+                 if (err) {
+                     res.status(405).json({ error: err })
+                 } else {
+                     if (data.image) {
+                         image.mv(__dirname + "/uploads/" + image.name, (err) => {
+                             if (err) {
+                                 res.status(405).json({ error: err })
+                             }
+                         })
+                     } else {
+                         res.json({ product: data._id })
+                     }
+                 }
+             })
     } catch (err) {
         console.log(err)
     }
-    
+
 
 
 }

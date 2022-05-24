@@ -9,6 +9,7 @@
 <div class="main-container">
     {{>adminHeader}}
     <div class="admin-body">
+        {{!-- admin header box --}}
         <div class="admin-detail">
             <img src="/images/background.jpg" alt="admin-img">
             <div class="name">
@@ -16,62 +17,51 @@
             </div>
         </div>
         
-        </div>
-        
         <div class="createProduct-form">
-            <h1>crete Product</h1>
-            <form method="POST" enctype="multipart/form-data" id="createProduct_form">
+            <h1>Edit Product</h1>
+            <form enctype="multipart/form-data" id="updateProduct">
                 <div class="inputParent">
                     <label for="productName">Product Name</label><br>
-                    <input type="text" name="name" id="name" />
+                    <input type="text" name="name" required value="{{product.name}}" id="name" />
                 </div>
 
-                
-                <div class="error nameError"> </div>
-                
+                <div class="error nameError"></div>
+
                 <div class="inputParent">
                     <label for="productImg">Product image</label><br>
-                    <input type="file" name="image"  id="image" />
-                </div>
-                
-                <div class="error imageError"> </div>
-                
-                <div class="inputParent">
-                    <label for="description">Product Description</label><br>
-                    <input type="text" name="description"  id="description" />
-                </div>
-               
-                <div class="error descError"> </div>
-                
-                <div class="inputParent">
-                    <label for="price">Product price</label><br>
-                    <input type="text" name="price"  id="price" />
+                    <input type="file" name="image" value="{{product.image}}" required id="image" />
                 </div>
 
-               
+                <div class="error imageError"></div>
+
+                <div class="inputParent">
+                    <label for="description">Product Description</label><br>
+                    <input type="text" name="description" value="{{product.description}}" required id="description" />
+                </div>
+                <div class="error descError"></div>
+                <div class="inputParent">
+                    <label for="price">Product price</label><br>
+                    <input type="text" name="price" value="{{product.price}}" required id="price" />
+                </div>
                 <div class="error priceError"></div>
-                
                 <div class="inputParent">
                     <label for="type">Product type</label><br>
                     <select name="type" id="type">
                         <option value="food">Food</option>
+
                         <option value="acccessories">Accessories</option>
                     </select>
                 </div>
-                
                 <div class="error typeError"></div>
-                
-                <button type="submit">Create product</button>
+                <button type="submit" id="updateProduct">update product</button>
 
             </form>
-        </div>
-        
 
+
+        </div>
     </div>
 </div>
 
-{{!-- updateProduct --}}
-<script>
+
+<script src="/javascripts/admin/updateProductHandler.js">
 </script>
-{{!-- create product script --}}
-<script src="/javascripts/admin/createProduct.js"></script>

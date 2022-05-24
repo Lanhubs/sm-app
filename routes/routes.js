@@ -20,7 +20,6 @@ require('dotenv').config()
 
 /* GET home page. */
 route.get("/", (req, res) => {
-
   res.render("index")
 
 
@@ -58,7 +57,7 @@ route.get("/products/:id", AuthenticateUser, checkUser, (req, res) => {
 })
 
 // cart route
-route.get("/cart", [AuthenticateUser, checkUser], (req, res) => {
+route.get("/cart", AuthenticateUser, checkUser, (req, res) => {
   const user = req.user.fullName;
   console.log(user)
   res.render("cart", { user })
@@ -129,7 +128,7 @@ route.get("/cart/orders/", AuthenticateUser, checkUser, ordersController)
 // services register route
 
 route.get("/services/:service/courseregister", (req, res) => {
-  // const url = req.url.split("/")[2].replace("%20", " ").replace("%20", " ")
+
   const url = req.url.split("/")[2].replaceAll("%20", " ")
   try {
     for (var i = 0; i < computerClasses.length; i++) {
@@ -142,10 +141,7 @@ route.get("/services/:service/courseregister", (req, res) => {
   }
 
 });
-/* route.get('/services/:service/courseregister', (req, res)=>{
-  const url = req.url.split("/")[2].replaceAll("%20", " ")
-  console.log(url);
-}) */
+
 route.post("/services/:service/courseregister", studentRegisterController)
 
 // route.get("*", checkUser)

@@ -76,16 +76,11 @@ router.get("/admin/students", authenticateAdmin, checkAdmin, (req, res) => {
 router.post("/admin/createproduct", createProduct)
 
 
-
-
-
-
-
 // product update routes
 router.get("/admin/:id/update",authenticateAdmin, checkAdmin,  (req, res) => {
     const admin = req.admin
     productDetails.findOne({ _id: req.params.id }, (err, data)=>{
-        res.render("createProduct", { admin: admin.fullName, product: {
+        res.render("updateProduct", { admin: admin.fullName, product: {
             name: data.name,
             description: data.description,
             image: data.image,
