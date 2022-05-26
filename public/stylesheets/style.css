@@ -69,7 +69,7 @@ a {
 }
 
 .header h2::first-letter {
-  font-size: larger;
+  /* font-size: larger; */
 }
 
 .header .displaySideNavBtn {
@@ -527,102 +527,33 @@ footer .contacts a {
 
 
 
-/* newsletter page */
-.form-container {
-  width: 400px;
-  padding: 80px 50px;
-  margin: 4em auto;
 
-  border-radius: 20px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2)
-}
-
-.form-container h1 {
-  color: #111;
-  margin-bottom: 50px;
-  border-left: 5px solid blue;
-  padding-left: 10px;
-  line-height: 1em
-}
-
-.inputbox {
-  margin-bottom: 50px
-}
-
-.inputbox input {
-  position: absolute;
-  width: 300px;
-  padding: 10px;
-  border-radius: 5px;
-
-  background: transparent
-}
-
-.inputbox input:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #e54b38;
-  outline: 0;
-  box-shadow: none
-}
-
-.inputbox span {
-  position: relative;
-  font-size: 15px;
-  top: 9px;
-  left: 1px;
-  padding-left: 10px;
-  display: inline-block;
-  transition: 0.5s
-}
-
-.inputbox input:focus~span {
-  transform: translateX(-10px) translateY(-32px);
-  font-size: 12px
-}
-
-.inputbox input:valid~span {
-  transform: translateX(-10px) translateY(-32px);
-  font-size: 12px
-}
-
-.form-container .submitBtn {
-  margin-top: .5em;
-  color: #f1f1f1;
-  background: #006eff;
-  padding: 1em 1.5em;
-  border-radius: 7px;
-  border: 2px thin #747577;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.inputboxtextArea {
-  width: 300px;
-  height: 6em;
-  margin-bottom: 10px;
-}
-
-.form-container textarea {
-  height: inherit;
-  width: inherit;
-  border-radius: 7px;
-}
 
 /* responsiveness control */
 @media only screen and (max-width: 768px) {
   .container {
     width: 100%;
-    min-width: 100%;
+  
 
+  }
+  .container  .form-container{
+    width: 300px;
+  }
+  .form-container .inputbox{
+    width: 90%;
+
+  }
+  .inputbox input{
+    width: 100%;
   }
   .container .header{
     width: 100%;
     left: 0;
     right: 0;
 
+
   }
+
   .header .displaySideNavBtn {
     display: block;
   }

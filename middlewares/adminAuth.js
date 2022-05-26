@@ -1,9 +1,10 @@
 const jwt = require("jsonwebtoken")
 const Admin = require("../model/admin")
+const { ADMIN_TOKEN_KEY } = require("../cotroller/secrets/secrets")
 require("dotenv").config()
 const createToken = (id) => {
     return jwt.sign({ id },
-        process.env.ADMIN_TOKEN_KEY,
+        ADMIN_TOKEN_KEY,
         { algorithm: "HS256", expiresIn: 60 * 60 * 24 })
 }
 // FORMAT OR TOKEN
@@ -34,7 +35,7 @@ const authenticateAdmin = (req, res, next) => {
     const token = req.cookies.ADMIN
     // check for jsonwebtoken existence
     if (token) {
-        jwt.verify(token, process.env.ADMIN_TOKEN_KEY, (err, decodedToken) => {
+        jwt.verify(token, ADMIN_TOKEN_KEY, (err, decodedToken) => {
             if (err) {
 
                 res.redirect("/admin/login")
@@ -55,7 +56,7 @@ const checkAdmin = (req, res, next) => {
         next()
     }
 
-    jwt.verify(token, process.env.ADMIN_TOKEN_KEY, async (err, dedcodedToken) => {
+    jwt.verify(token, ADMIN_TOKEN_KEY, async (err, dedcodedToken) => {
         if (err) {
             console.log(err)
             next(err)

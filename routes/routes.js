@@ -41,6 +41,9 @@ route.get("/home", AuthenticateUser, checkUser, (req, res) => {
 
 
 })
+route.get("/errorpage", (req, res)=>{
+  res.render("pageUnderDev")
+})
 // products list page
 route.get("/products", (req, res) => {
 
@@ -52,7 +55,7 @@ route.get("/products", (req, res) => {
 route.get("/products/:id", AuthenticateUser, checkUser, (req, res) => {
 
   req.params.id = req.user._id
-  res.render("products", { Foods, electronics, user: req.user })
+  res.render("products", { Foods, electronics, user: req.user.fullName })
 
 })
 

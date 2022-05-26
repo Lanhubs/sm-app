@@ -1,12 +1,13 @@
 .main-body .login-form-parent{
     width: 100%;
     margin: 0;
+    margin-top: 6em;
     height: 100%;
 
 }
 
 .main-body .login-form-parent .user-form{
-    max-width: 26em;
+    max-width: 27em;
     margin: 30px auto;
     padding-left: 0;
     padding: 20px;
@@ -84,6 +85,11 @@
     color: rgb(85, 125, 243);
 }
 @media only screen and (max-width: 768px){
+    
+    .main-body .login-form-parent .user-form {
+        padding: 15px;
+    
+    }
     .main-body .login-form-parent .user-form{
         margin: 50px 30px 90px 30px;
     }

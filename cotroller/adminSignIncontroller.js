@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken")
 const Admin = require("../model/admin.js")
 const bcrypt = require("bcrypt")
 const {createToken, handleLoginError} = require("../middlewares/adminAuth")
+const { ADMIN_TOKEN_KEY } = require("./secrets/secrets.js")
 require("dotenv").config()
 
 
@@ -20,7 +21,7 @@ const adminSignUpController = async (req, res) => {
         if (admin) {
             const token = createToken(admin._id)
             const maxAge = 3 * 24 * 60 * 60 *1000
-            res.cookie(process.env.ADMIN_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge, secure: true });
+            res.cookie(ADMIN_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge, secure: true });
             res.status(200).json({ admin: admin._id })
             // console.log(admin)
         }
@@ -48,7 +49,7 @@ var adminSignInController = async (req, res) => {
        const admin = await Admin.login(email, password)
        const token = createToken(admin._id)
        const maxAge = 3 * 24 * 60 * 60 *1000
-       res.cookie(process.env.ADMIN_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge, secure: true });
+       res.cookie(ADMIN_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge, secure: true });
       if(admin){
        res.status(200).json({admin: admin._id})
         // res.redirect('/admin');

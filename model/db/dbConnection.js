@@ -1,10 +1,11 @@
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
+const { DB_CONNECTION_URI } = require("../../cotroller/secrets/secrets")
 require('dotenv').config()
-const mongoURI = process.env.DB_CONNECTION_URI
+// const mongoURI = process.env.DB_CONNECTION_URI
 
 
-mongoose.connect("mongodb+srv://olanrewaju:habeeb2001@metechdb.qjtgb.mongodb.net/mydb?retryWrites=true&w=majority")
+mongoose.connect( DB_CONNECTION_URI)
     .then(() => {
         console.log("database connected")
     })

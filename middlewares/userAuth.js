@@ -2,9 +2,10 @@ const jwt = require("jsonwebtoken")
 const user = require("../model/user")
 require("dotenv").config()
 const User = require("../model/user")
+const { USER_TOKEN_KEY } = require("../cotroller/secrets/secrets")
 const createToken = (id) => {
     return jwt.sign({ id },
-        process.env.USER_TOKEN_KEY,
+        USER_TOKEN_KEY,
         { algorithm: "HS256", expiresIn: 60 * 60 * 1 })
 }
 // FORMAT OR TOKEN
@@ -35,7 +36,7 @@ const AuthenticateUser = (req, res, next) => {
     const token = req.cookies.ME_TECH
     // check for jsonwebtoken existence
     if (token) {
-        jwt.verify(token, process.env.USER_TOKEN_KEY, (err, decodedToken) => {
+        jwt.verify(token, USER_TOKEN_KEY, (err, decodedToken) => {
             if (err) {
 
                 res.redirect("/login")
@@ -55,7 +56,7 @@ const checkUser = (req, res, next) => {
         next()
     }
 
-    jwt.verify(token, process.env.USER_TOKEN_KEY, async (err, dedcodedToken) => {
+    jwt.verify(token, USER_TOKEN_KEY, async (err, dedcodedToken) => {
         if (err) {
             console.log(err)
             next(err)

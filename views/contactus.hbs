@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/stylesheets/newsletter.css">
 <div class="container">
     {{>header}}
 
@@ -6,17 +7,20 @@
             <h1 class="form-header">Your Message</h1>
             <form id="contactusForm">
                 <div class="inputbox">
-                    <input type="text" id="fullName" name="fullName" class="form-control" required="required">
-                    <span>Full
+                     <span>Full
                         name</span>
+                    <input type="text" id="fullName" name="fullName" class="form-control" required="required">
+                   
                 </div>
                 <div class="inputbox">
-                    <input type="email" id="email" name="email" class="form-control" required="required">
                     <span>Email</span>
+
+                    <input type="email" id="email" name="email" class="form-control" required="required">
                 </div>
                 <div class="inputbox">
-                    <input type="text" id="subject" name="subject" class="form-control" required="required">
                     <span>subject</span>
+                    <input type="text" id="subject" name="subject" class="form-control" required="required">
+                    
                 </div>
                 <div class="inputboxtextArea ">
                     <!-- <label for="Message">Message</label><br> -->
@@ -24,7 +28,7 @@
                         placeholder="Message....." required></textarea>
                     <span></span>
                 </div>
-                <button type="submit" class="submitBtn">Subscribe</button>
+                <button type="submit" class="submitBtn">Send Message</button>
             </form>
         </div>
     </div>

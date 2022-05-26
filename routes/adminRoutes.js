@@ -38,6 +38,16 @@ router.get("/admin", authenticateAdmin, checkAdmin, (req, res) => {
         }
     }
 })
+router.delete("/admin", (req, res)=>{
+    ordersModel.deleteMany({}, (err, docs)=>{
+        if(err){
+            res.status(406).json({error: "cannot perform operation"})
+            console.log({error: err})
+        }
+        res.status(200).json({docs})
+        console.log(docs)
+    })
+})
 router.get("/admin/dashboard", authenticateAdmin, checkAdmin, (req, res) => {
     const admin = req.admin
     res.render("dashboard", { admin: admin.fullName })

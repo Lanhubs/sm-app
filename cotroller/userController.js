@@ -2,6 +2,7 @@ const UserModel = require("../model/user")
 const bcrypt = require('bcrypt')
 const { createToken, handleLoginError } = require("../middlewares/userAuth")
 const { log } = require("npmlog")
+const { USER_TOKEN_KEY } = require("./secrets/secrets")
 
 const signupController = async (req, res) => {
     // const { fullName, email, password } = req.body
@@ -18,7 +19,7 @@ const signupController = async (req, res) => {
         if (user) {
             const token = createToken(user._id)
             const maxAge = 3 * 24 * 60 * 60 *1000
-            res.cookie(process.env.USER_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge });
+            res.cookie(USER_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge });
             res.status(200).json({ user: user._id })
             // console.log(user)
         }
@@ -45,7 +46,7 @@ const signInController = async (req, res) => {
        const user = await UserModel.login(email, password)
        const token = createToken(user._id)
        const maxAge = 3 * 24 * 60 * 60 *1000
-       res.cookie(process.env.USER_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge });
+       res.cookie(USER_TOKEN_KEY, token, { httpOnly: true, maxAge: maxAge });
       
        res.status(200).json({user: user._id})
 

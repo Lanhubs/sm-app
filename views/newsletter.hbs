@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="/stylesheets/newsletter.css">
+
+
+
 <div class="container">
     {{>header}}
 
@@ -6,18 +10,15 @@
             <h1 class="form-header">Newsletter</h1>
             <form method="post" id="newsletterForm">
                 <div class="inputbox">
+                    <span>Full name</span>
                     <input type="text" id="fullName" name="fullName" class="form-control" required="required">
-                    <span>Full
-                        name</span>
+                    
                 </div>
                 <div class="inputbox">
-                    <input type="email" id="email" name="email" class="form-control" required="required">
                     <span>Email</span>
+                    <input type="email" id="email" name="email" class="form-control" required="required">
+                    
                 </div>
-                {{!-- <div class="inputbox">
-                    <input type="text" id="phone" name="phone" class="form-control" required="required">
-                    <span>Phone No</span>
-                </div> --}}
                 <button type="submit" class="submitBtn">Subscribe</button>
             </form>
         </div>

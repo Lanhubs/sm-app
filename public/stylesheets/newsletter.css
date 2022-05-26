@@ -1,0 +1,104 @@
+/* newsletter page */
+.form-container {
+    
+    max-width: 400px;
+    padding: 50px 30px;
+    margin: 4em auto;
+    margin-top: 6em;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2)
+}
+
+.form-container h1 {
+    color: #111;
+    margin-bottom: 50px;
+    border-left: 5px solid blue;
+    padding-left: 10px;
+    line-height: 1em
+}
+
+.container .form-container .inputbox {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.container .form-container .inputbox input {
+    width: inherit;
+    padding: 10px;
+    border-radius: 5px;
+
+    background: transparent
+}
+
+.form-container .submitBtn {
+    margin-top: .5em;
+    color: #f1f1f1;
+    background: #006eff;
+    padding: 1em 1.5em;
+    border: none;
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.form-container .submitBtn:hover {
+    background: #fff;
+    border: 2px solid #006eff;
+    color: #006eff;
+}
+
+.container .form-container .inputboxtextArea {
+    width: 300px;
+    height: 6em;
+    margin-bottom: 10px;
+}
+
+.form-container textarea {
+    height: inherit;
+    width: inherit;
+    border-radius: 7px;
+    padding: 10px;
+
+}
+
+/* responsiveness control */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+
+
+    }
+
+    .container .form-container {
+        /* max-width: 300px; */
+    }
+
+    .form-container .inputbox {
+        width: 90%;
+
+    }
+
+    .inputbox input {
+        width: 100%;
+    }
+
+    .container .header {
+        width: 100%;
+        left: 0;
+        right: 0;
+
+
+    }
+
+    .header .displaySideNavBtn {
+        display: block;
+    }
+
+    .header .navBar {
+
+        display: none;
+    }
+
+}

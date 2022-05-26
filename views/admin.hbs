@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="/stylesheets/adminDash.css"
+
+
 <div class="main-container">
     {{>adminHeader}}
     <section class="admin-body">
@@ -51,7 +54,7 @@
                 </tbody>
             </table>
             <div class="del-parent">
-                <button >clear orders</button>
+                <button id="clearOrdersBtn">clear orders</button>
             </div>
         </div>
     </section>
@@ -76,5 +79,21 @@ const truncate = (str, maxLength, { side = "end", elipsis = "..." } = {}) => {
         }
     }
 }
+
+document.querySelector("#clearOrdersBtn").addEventListener("click", e=>{
+    fetch('/admin', {
+        method: "DELETE"
+    }).then(res=>{
+        res.json()
+    }).then(data=> {
+    document.querySelectorAll("tbody tr").forEach(elem=>{
+        elem.remove
+    })
+        console.log(data)})
+
+    .catch(err=>{
+        console.log(err)
+    })
+})
 </script>
-{{!-- <script src="/javascripts/admin/adminHandler.js"></script> --}}
+{{!-- <script src="adminHandler.js"></script> --}}

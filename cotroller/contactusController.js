@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const { EMAIL_HOST } = require("./secrets/secrets");
 require("dotenv").config()
 
 
